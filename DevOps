@@ -1,0 +1,28 @@
+Walkthrough
+A comprehensive Docker-based CI/CD workflow was introduced for a MERN stack application. New Dockerfiles, .dockerignore files, and a docker-compose setup were added for both backend and frontend. Jenkins pipeline automation, build/deploy shell scripts, and substantial README documentation updates were included, alongside a trigger file for testing purposes.
+
+Changes
+File(s)	Change Summary
+Jenkinsfile	Added Jenkins pipeline for CI/CD: checkout, Docker build, push, and EC2 deployment stages.
+README.md	Rewritten and expanded: added detailed project, CI/CD, Docker, and monitoring documentation.
+backend/.dockerignore, frontend/.dockerignore	Added to exclude node_modules, dist, and npm-debug.log from Docker build context.
+backend/Dockerfile	Added Dockerfile for backend: Node.js 18 Alpine, installs deps, copies code, exposes port 5000.
+frontend/Dockerfile	Added multi-stage Dockerfile for frontend: Node.js build, Nginx serve, exposes port 80.
+docker-compose.yml	New Compose file: defines backend/frontend services, build context, ports, restart policy.
+build.sh	New shell script: builds and tags backend/frontend Docker images for dev/prod.
+deploy.sh	New shell script: pushes images to Docker Hub and deploys with docker-compose.
+trigger-check.txt	Added trigger file with placeholder text for webhook/testing.
+Sequence Diagram(s)
+
+Poem
+🐇
+In Docker burrows, code now flows,
+Jenkins hops where pipelines go.
+Compose and scripts, a tidy den,
+Backend, frontend—built again!
+README blooms with guidance clear,
+The rabbit cheers: "Deploy is here!"
+
+✨ Finishing Touches
+ 📝 Generate Docstrings
+Thanks for using CodeRabbit! It's free for OSS, and your support helps us grow. If you like it, consider giving us a shout-out.
